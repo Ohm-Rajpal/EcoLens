@@ -54,6 +54,8 @@ const animate_1 = require("SpectaclesInteractionKit.lspkg/Utils/animate");
 const Event_1 = require("SpectaclesInteractionKit.lspkg/Utils/Event");
 const UI_CAM_DISTANCE = 50;
 const UI_CAM_HEIGHT = -9;
+const UI_TEXT_DISTANCE = 55;
+const UI_TEXT_HEIGHT = -9;
 let SpeechUI = (() => {
     let _classDecorators = [component];
     let _classDescriptor;
@@ -69,7 +71,10 @@ let SpeechUI = (() => {
             this.speechText = this.speechText;
             this.asrVoiceController = this.asrVoiceController;
             this.speechButtonCollider = this.speechButtonCollider;
+            this.tutorialObject = this.tutorialObject; // The 3D object to show/hide
+            this.celebration = this.celebration;
             this.onSpeechReady = new Event_1.default();
+            this.hasShownTutorial = false;
         }
         __initialize() {
             super.__initialize();
@@ -79,7 +84,10 @@ let SpeechUI = (() => {
             this.speechText = this.speechText;
             this.asrVoiceController = this.asrVoiceController;
             this.speechButtonCollider = this.speechButtonCollider;
+            this.tutorialObject = this.tutorialObject; // The 3D object to show/hide
+            this.celebration = this.celebration;
             this.onSpeechReady = new Event_1.default();
+            this.hasShownTutorial = false;
         }
         onAwake() {
             this.speechBubbleTrans = this.speecBocAnchor.getTransform();
@@ -88,6 +96,10 @@ let SpeechUI = (() => {
             this.mainCamTrans = this.mainCamObj.getTransform();
             this.animateSpeechIcon(false);
             this.speechText.text = "";
+            // Hide celebration button until voice input is received
+            if (this.celebration) {
+                this.celebration.enabled = false;
+            }
             this.createEvent("OnStartEvent").bind(this.onStart.bind(this));
             this.createEvent("UpdateEvent").bind(this.onUpdate.bind(this));
         }
@@ -98,7 +110,22 @@ let SpeechUI = (() => {
             this.asrVoiceController.onFinalVoiceEvent.add((text) => {
                 this.speechText.text = text;
                 this.stopListening();
-                this.onSpeechReady.invoke(text);
+                // Hide tutorial object after first use
+                if (!this.hasShownTutorial && this.tutorialObject) {
+                    this.tutorialObject.enabled = false;
+                    this.hasShownTutorial = true;
+                }
+                // Delay the API call by 15 seconds
+                var delayEvent = this.createEvent("DelayedCallbackEvent");
+                delayEvent.bind(() => {
+                    // display the button after the use
+                    if (this.celebration) {
+                        this.celebration.enabled = true;
+                    }
+                    // Invoke speech ready event (triggers API call) after 15 second delay
+                    this.onSpeechReady.invoke(text);
+                });
+                delayEvent.reset(15.0); // 15 second delay
             });
         }
         activateSpeechButton(activate) {

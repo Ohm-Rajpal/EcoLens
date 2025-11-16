@@ -1,9 +1,10 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 485
+    size: 623
     values:
       - ""
+      - Base.png
       - "Custom Location Asset [Input ID].location"
       - Custom Location Mesh.location_mesh
       - FrontCameraMirror.js
@@ -11,6 +12,7 @@ CollapsedEntities:
       - Images/MicIcon.png
       - Images/loading.gif
       - Location Material.mat
+      - MaterialParams.png
       - Materials
       - Materials/CaptureTexture.mat
       - Materials/CircleOutline.mat
@@ -36,14 +38,146 @@ CollapsedEntities:
       - Mesh/Unit Plane.mesh
       - Mesh/Unit Sphere.mesh
       - Mesh/arrow.mesh
+      - Modules
       - Modules/Camera Module.cameraModule
       - Modules/Camera.prefab
+      - Normal.png
+      - PBR.mat
       - Prefabs
       - Prefabs/WorldArrow.prefab
       - Prefabs/WorldLabel.prefab
       - Prefabs/coloredPoint.prefab
+      - RemoteServiceGateway 2.lspkg/Helpers
+      - RemoteServiceGateway 2.lspkg/Helpers/AudioProcessor.ts
+      - RemoteServiceGateway 2.lspkg/Helpers/DynamicAudioOutput.ts
+      - RemoteServiceGateway 2.lspkg/Helpers/MicrophoneRecorder.ts
+      - RemoteServiceGateway 2.lspkg/Helpers/VideoController.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Examples
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Examples/ExampleGeminiCalls.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Examples/ExampleGeminiLive.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Examples/ExampleImagenCalls.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Examples/ExampleLyriaCall.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Examples/ExampleOAICalls.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Examples/ExampleOAIRealtime.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Gemini.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/GeminiTypes.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/GoogleGenAI.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/GoogleGenAITypes.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Imagen.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/Lyria.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/OpenAI.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/OpenAITypes.ts
+      - RemoteServiceGateway 2.lspkg/HostedExternal/RemoteServiceModules/Gemini_Live.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedExternal/RemoteServiceModules/Gemini_Sync.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedExternal/RemoteServiceModules/Imagen_Sync.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedExternal/RemoteServiceModules/Lyria_Sync.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Completions.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Generations.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedExternal/RemoteServiceModules/OpenAi_ImageEdits.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Realtime.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedSnap
+      - RemoteServiceGateway 2.lspkg/HostedSnap/DeepSeekTypes.ts
+      - RemoteServiceGateway 2.lspkg/HostedSnap/Deepseek.ts
+      - RemoteServiceGateway 2.lspkg/HostedSnap/Examples
+      - RemoteServiceGateway 2.lspkg/HostedSnap/Examples/ExampleDeepseekCalls.ts
+      - RemoteServiceGateway 2.lspkg/HostedSnap/Examples/ExampleSnap3D.ts
+      - RemoteServiceGateway 2.lspkg/HostedSnap/RemoteServiceModules
+      - RemoteServiceGateway 2.lspkg/HostedSnap/RemoteServiceModules/Deepseek_Completions.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedSnap/RemoteServiceModules/Remote Media Module.remoteMediaModule
+      - RemoteServiceGateway 2.lspkg/HostedSnap/RemoteServiceModules/Snap3D_GetStatus.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedSnap/RemoteServiceModules/Snap3D_Submit.remoteServiceModule
+      - RemoteServiceGateway 2.lspkg/HostedSnap/Snap3D.ts
+      - RemoteServiceGateway 2.lspkg/HostedSnap/Snap3DTypes.ts
+      - RemoteServiceGateway 2.lspkg/README.md
+      - RemoteServiceGateway 2.lspkg/RemoteServiceGatewayCredentials.ts
+      - RemoteServiceGateway 2.lspkg/RemoteServiceGatewayExamples__PLACE_IN_SCENE.prefab
+      - RemoteServiceGateway 2.lspkg/Resources
+      - RemoteServiceGateway 2.lspkg/Resources/Audio Output.audioOutput
+      - RemoteServiceGateway 2.lspkg/Resources/Microphone Audio.micaudio
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/LoadingSpinner
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner.prefab
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.mat
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.mesh
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.ss_graph
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.ts
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/Materials
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/Materials/Image.mat
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/Materials/Image.png
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/Materials/SnapImage3D.mat
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/Materials/Unlit.mat
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/Materials/flat.ss_graph
+      - RemoteServiceGateway 2.lspkg/Resources/Visuals/Materials/unlit.ss_graph
+      - RemoteServiceGateway 2.lspkg/Utils
+      - RemoteServiceGateway 2.lspkg/Utils/Event.ts
+      - RemoteServiceGateway 2.lspkg/Utils/Promisfy.ts
       - RemoteServiceGateway 2.lspkg/package.native
-      - RemoteServiceGateway.lspkg
+      - RemoteServiceGateway.lspkg/Helpers
+      - RemoteServiceGateway.lspkg/Helpers/AudioProcessor.ts
+      - RemoteServiceGateway.lspkg/Helpers/DynamicAudioOutput.ts
+      - RemoteServiceGateway.lspkg/Helpers/MicrophoneRecorder.ts
+      - RemoteServiceGateway.lspkg/Helpers/VideoController.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Examples
+      - RemoteServiceGateway.lspkg/HostedExternal/Examples/ExampleGeminiCalls.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Examples/ExampleGeminiLive.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Examples/ExampleImagenCalls.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Examples/ExampleLyriaCall.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Examples/ExampleOAICalls.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Examples/ExampleOAIRealtime.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Gemini.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/GeminiTypes.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/GoogleGenAI.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/GoogleGenAITypes.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Imagen.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/Lyria.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/OpenAI.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/OpenAITypes.ts
+      - RemoteServiceGateway.lspkg/HostedExternal/RemoteServiceModules/Gemini_Live.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedExternal/RemoteServiceModules/Gemini_Sync.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedExternal/RemoteServiceModules/Imagen_Sync.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedExternal/RemoteServiceModules/Lyria_Sync.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Completions.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Generations.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedExternal/RemoteServiceModules/OpenAi_ImageEdits.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedExternal/RemoteServiceModules/OpenAi_Realtime.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedSnap
+      - RemoteServiceGateway.lspkg/HostedSnap/DeepSeekTypes.ts
+      - RemoteServiceGateway.lspkg/HostedSnap/Deepseek.ts
+      - RemoteServiceGateway.lspkg/HostedSnap/Examples
+      - RemoteServiceGateway.lspkg/HostedSnap/Examples/ExampleDeepseekCalls.ts
+      - RemoteServiceGateway.lspkg/HostedSnap/Examples/ExampleSnap3D.ts
+      - RemoteServiceGateway.lspkg/HostedSnap/RemoteServiceModules
+      - RemoteServiceGateway.lspkg/HostedSnap/RemoteServiceModules/Deepseek_Completions.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedSnap/RemoteServiceModules/Remote Media Module.remoteMediaModule
+      - RemoteServiceGateway.lspkg/HostedSnap/RemoteServiceModules/Snap3D_GetStatus.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedSnap/RemoteServiceModules/Snap3D_Submit.remoteServiceModule
+      - RemoteServiceGateway.lspkg/HostedSnap/Snap3D.ts
+      - RemoteServiceGateway.lspkg/HostedSnap/Snap3DTypes.ts
+      - RemoteServiceGateway.lspkg/README.md
+      - RemoteServiceGateway.lspkg/RemoteServiceGatewayCredentials.ts
+      - RemoteServiceGateway.lspkg/RemoteServiceGatewayExamples__PLACE_IN_SCENE.prefab
+      - RemoteServiceGateway.lspkg/Resources
+      - RemoteServiceGateway.lspkg/Resources/Audio Output.audioOutput
+      - RemoteServiceGateway.lspkg/Resources/Microphone Audio.micaudio
+      - RemoteServiceGateway.lspkg/Resources/Visuals
+      - RemoteServiceGateway.lspkg/Resources/Visuals/LoadingSpinner
+      - RemoteServiceGateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner
+      - RemoteServiceGateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner.prefab
+      - RemoteServiceGateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.mat
+      - RemoteServiceGateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.mesh
+      - RemoteServiceGateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.ss_graph
+      - RemoteServiceGateway.lspkg/Resources/Visuals/LoadingSpinner/LoadingSpinner/LoadingSpinner.ts
+      - RemoteServiceGateway.lspkg/Resources/Visuals/Materials
+      - RemoteServiceGateway.lspkg/Resources/Visuals/Materials/Image.mat
+      - RemoteServiceGateway.lspkg/Resources/Visuals/Materials/Image.png
+      - RemoteServiceGateway.lspkg/Resources/Visuals/Materials/SnapImage3D.mat
+      - RemoteServiceGateway.lspkg/Resources/Visuals/Materials/Unlit.mat
+      - RemoteServiceGateway.lspkg/Resources/Visuals/Materials/flat.ss_graph
+      - RemoteServiceGateway.lspkg/Resources/Visuals/Materials/unlit.ss_graph
+      - RemoteServiceGateway.lspkg/Utils
+      - RemoteServiceGateway.lspkg/Utils/Event.ts
+      - RemoteServiceGateway.lspkg/Utils/Promisfy.ts
       - RemoteServiceGateway.lspkg/package.native
       - Rendering
       - Rendering/Device Camera Texture.deviceCameraTexture
@@ -52,6 +186,7 @@ CollapsedEntities:
       - Rendering/Echopark.hdr/Specular
       - Rendering/Render Target.renderTarget
       - Scene.scene
+      - Scripts
       - Scripts/APIKeyHint.ts
       - Scripts/ASRController.ts
       - Scripts/DebugVisualizer.ts
@@ -65,6 +200,7 @@ CollapsedEntities:
       - Scripts/SpeechUI.ts
       - Scripts/TouchDownButton.ts
       - Scripts/WorldLabel.ts
+      - SpectaclesInteractionKit.lspkg
       - SpectaclesInteractionKit.lspkg/Assets
       - SpectaclesInteractionKit.lspkg/Assets/Audio
       - SpectaclesInteractionKit.lspkg/Assets/Audio/HoverAudioTrack.wav
@@ -487,5 +623,7 @@ CollapsedEntities:
       - SpectaclesInteractionKit.lspkg/package.native
       - SpectaclesInteractionKit.lspkg/tsconfig.json
       - location_material.ss_graph
+      - pbr.ss_graph
+      - prefab_first.lspkg
       - prefab_first.lspkg/Crop Gesture Prefab.prefab
   options: 4

@@ -1,9 +1,13 @@
 import animate, { CancelSet } from "SpectaclesInteractionKit.lspkg/Utils/animate";
 import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 import { ASRController } from "./ASRController";
+import { CelebrationEffect } from "./CelebrationEffect";
 
 const UI_CAM_DISTANCE = 50;
 const UI_CAM_HEIGHT = -9;
+
+const UI_TEXT_DISTANCE = 55;
+const UI_TEXT_HEIGHT = -9;
 
 @component
 export class SpeechUI extends BaseScriptComponent {
@@ -13,12 +17,14 @@ export class SpeechUI extends BaseScriptComponent {
   @input speechText: Text;
   @input asrVoiceController: ASRController;
   @input speechButtonCollider: ColliderComponent;
-
+  @input tutorialObject: SceneObject; // The 3D object to show/hide
+  @input celebration: SceneObject;
   onSpeechReady = new Event<string>();
 
   private speechBubbleTrans: Transform;
   private trans: Transform;
   private mainCamTrans: Transform;
+  private hasShownTutorial: boolean = false;
 
   onAwake() {
     this.speechBubbleTrans = this.speecBocAnchor.getTransform();
@@ -27,6 +33,12 @@ export class SpeechUI extends BaseScriptComponent {
     this.mainCamTrans = this.mainCamObj.getTransform();
     this.animateSpeechIcon(false);
     this.speechText.text = "";
+
+    // Hide celebration button until voice input is received
+    if (this.celebration) {
+      this.celebration.enabled = false;
+    }
+
     this.createEvent("OnStartEvent").bind(this.onStart.bind(this));
     this.createEvent("UpdateEvent").bind(this.onUpdate.bind(this));
   }
@@ -38,7 +50,25 @@ export class SpeechUI extends BaseScriptComponent {
     this.asrVoiceController.onFinalVoiceEvent.add((text) => {
       this.speechText.text = text;
       this.stopListening();
-      this.onSpeechReady.invoke(text);
+
+      // Hide tutorial object after first use
+      if (!this.hasShownTutorial && this.tutorialObject) {
+        this.tutorialObject.enabled = false;
+        this.hasShownTutorial = true;
+      }
+
+      // Delay the API call by 15 seconds
+      var delayEvent = this.createEvent("DelayedCallbackEvent");
+      delayEvent.bind(() => {
+        // display the button after the use
+        if (this.celebration) {
+          this.celebration.enabled = true;
+        }
+
+        // Invoke speech ready event (triggers API call) after 15 second delay
+        this.onSpeechReady.invoke(text);
+      });
+      delayEvent.reset(15.0); // 15 second delay
     });
   }
 

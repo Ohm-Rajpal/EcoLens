@@ -53,29 +53,42 @@ function component(target) {
 const Gemini_1 = require("RemoteServiceGateway.lspkg/HostedExternal/Gemini");
 //const GEMINI_MODEL = "gemini-2.5-flash";
 const GEMINI_MODEL = "gemini-2.5-pro";
-const SYSTEM_MESSAGE = "You are an AI assistant inside of augmented reality glasses designed to help users make healthier and more eco-friendly choices. " +
-    "Return bounding boxes as a JSON array with labels, your answer should be a JSON object with 3 keys: 'message', 'data' and 'lines.' " +
-    "The 'data' key should contain an array of objects, each with a 'label', 'description', and 'boundingBox' (array of 4 numbers), and optional 'showArrow' boolean. " + // 🔹 changed line
-    "CRITICAL: You must identify and label exactly 2 comparable edible objects (food or drinks) that the user can choose between. " +
-    "If there are not exactly 2 comparable edible objects visible, respond with a message saying 'I need to see exactly 2 comparable edible items to help you choose.'\n" +
-    "Your 'message' field should contain a formatted comparison with line breaks between sections: " +
-    "Format the message EXACTLY like this with \\n for line breaks: " +
-    "WINNER: [Item name] is the better choice because [one clear reason]\\n\\n" +
-    "HEALTH:\\n" +
-    "[Item 1] - [2 simple health facts in one sentence]\\n" +
-    "[Item 2] - [2 simple health facts in one sentence]\\n\\n" +
-    "IMPACT:\\n" +
-    "Both items [shared environmental impact in relatable terms - 1-2 sentences max]\\n\\n" +
-    "REUSE:\\n" +
-    "[Item 1] bag can become [idea]. [Item 2] bag works as [idea].\\n" +
-    "Use everyday comparisons people can visualize: " +
-    "- Instead of '150g CO2' say 'like driving 0.5 miles' " +
-    "- Instead of '500 years to decompose' say 'will exist until year 2524' " +
-    "- Instead of '200mg sodium' say 'half the salt' " +
-    "Keep each section scannable in seconds. " +
-    "Be informative without preaching.\n" +
-    "The 'data' array must contain exactly 2 objects with labels, descriptions, and bounding box coordinates. " + // 🔹 updated
-    "Never return masks or code fencing. Return only valid JSON matching the required schema.";
+const SYSTEM_MESSAGE = "You are an AI inside AR glasses. Identify EXACTLY TWO edible items (food or drinks). If you cannot see exactly two, respond only with: 'I need to see exactly 2 comparable edible items to help you choose.'\n\n" +
+    "---------------------------------------------\n" +
+    "OUTPUT FORMAT (STRICT)\n" +
+    "Return ONLY a JSON object with:\n" +
+    "1. 'message' – ONE short sentence (MAX 40 words) that:\n" +
+    "   - clearly states which item is the better choice\n" +
+    "   - includes numeric calories per serving for each item\n" +
+    "   - mentions 1–2 short nutrition differences (sugar, sodium, protein, caffeine, processing)\n" +
+    "2. 'data' – EXACTLY 2 objects, each with:\n" +
+    "   - label (string)\n" +
+    "   - boundingBox (array of 4 numbers)\n" +
+    "   - useArrow (boolean)\n" +
+    "3. 'lines' – optional array (may be empty)\n" +
+    "No markdown. No extra fields.\n" +
+    "---------------------------------------------\n\n" +
+    "---------------------------------------------\n" +
+    "LABEL FORMAT FOR EACH ITEM (AR OVERLAY)\n" +
+    "Each 'label' must be a 4-line nutrition card using \\n line breaks.\n" +
+    "Exact structure:\n" +
+    "[Item name]\\n" +
+    "Calories/serving: [numeric calories like '120 kcal']\\n" +
+    "Sugar: [short fact: '0g', '45g', 'less', 'more']\\n" +
+    "Other: [one short fact: sodium/protein/caffeine/processing]\\n" +
+    "If this item is the better choice, add a final line: '✔ Better choice'\n\n" +
+    "Examples (NOT to copy literally):\n" +
+    "\"Coffee\\nCalories/serving: 5 kcal\\nSugar: 0g\\nExtras: Mild caffeine\\n✔ Better choice\"\n" +
+    "\"Energy Drink\\nCalories/serving: 210 kcal\\nSugar: 54g\\nExtras: Strong caffeine\"\n\n" +
+    "RULES:\n" +
+    "- Calories MUST be numeric values (e.g., '150 kcal').\n" +
+    "- Only one item may include '✔ Better choice'.\n" +
+    "- Message must stay under 40 words.\n" +
+    "- Only nutrition comparisons; do not include environmental impact.\n" +
+    "- Item 1 and Item 2 must have different nutrition facts.\n" +
+    "- Only label food/drinks.\n" +
+    "- Set useArrow=true for both.\n" +
+    "- Avoid overlapping AR labels.\n";
 let GeminiAPI = (() => {
     let _classDecorators = [component];
     let _classDescriptor;

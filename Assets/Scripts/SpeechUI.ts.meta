@@ -27,11 +27,13 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     asrVoiceController: false
+    celebration: false
     mainCamObj: false
     micRend: false
     speecBocAnchor: false
     speechButtonCollider: false
     speechText: false
+    tutorialObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -47,6 +49,8 @@
       speechText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       asrVoiceController: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       speechButtonCollider: !<reference.ColliderComponent> 00000000-0000-0000-0000-000000000000
+      tutorialObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      celebration: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -57,3 +61,5 @@
     - // @input Component.Text speechText
     - // @input AssignableType asrVoiceController
     - // @input Component.ColliderComponent speechButtonCollider
+    - // @input SceneObject tutorialObject
+    - // @input SceneObject celebration
