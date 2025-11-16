@@ -33,7 +33,14 @@ You can download the latest version of Lens Studio from [here](https://ar.snap.c
 We use AR to choose the most nutritional and healthy food/drink choice for a person. Our system leverages Snapchat's depth cache to identify and classify food items, and also uses Gemini Pro's cloud vision models to further analyze the pictures and choose the healthiest food option for you. 
 
 ## Contact
-Ohm Rajpal https://www.linkedin.com/in/ohmrajpal/ 
-Pranav Sharma https://www.linkedin.com/in/pranav-sharma-design/ 
-Priya Venkatesan https://www.linkedin.com/in/priya-venkatesan-me/ 
-Mega Sari https://www.linkedin.com/in/megaindahsari/ 
+Ohm Rajpal
+https://www.linkedin.com/in/ohmrajpal/
+
+Pranav Sharma
+https://www.linkedin.com/in/pranav-sharma-design/
+
+Priya Venkatesan
+https://www.linkedin.com/in/priya-venkatesan-me/
+
+Mega Sari
+https://www.linkedin.com/in/megaindahsari/
