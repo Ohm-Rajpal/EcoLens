@@ -5,6 +5,7 @@ import { Loading } from "./Loading";
 import { DepthCache } from "./DepthCache";
 import { DebugVisualizer } from "./DebugVisualizer";
 
+
 @component
 export class SceneController extends BaseScriptComponent {
   @input
@@ -29,24 +30,22 @@ export class SceneController extends BaseScriptComponent {
   @hint("Caches depth frame and converts pixel positions to world space")
   depthCache: DepthCache;
 
+
   private isRequestRunning = false;
+
 
   onAwake() {
     this.createEvent("OnStartEvent").bind(this.onStart.bind(this));
   }
 
+
   onStart() {
-    //    var tapEvent = this.createEvent("TapEvent");
-    //    tapEvent.bind(() => {
-    //      print("Editor tap event...");
-    //      this.onSpeechRecieved("Can you show me all the objects you see?");
-    //    });
-    //
     //listen to new speech input
     this.speechUI.onSpeechReady.add((text) => {
       this.onSpeechRecieved(text);
     });
   }
+
 
   onSpeechRecieved(text: string) {
     this.speechUI.activateSpeechButton(false);
@@ -70,6 +69,7 @@ export class SceneController extends BaseScriptComponent {
     }
   }
 
+
   private sendToGemini(
     cameraFrame: Texture,
     text: string,
@@ -79,27 +79,46 @@ export class SceneController extends BaseScriptComponent {
       this.isRequestRunning = false;
       this.speechUI.activateSpeechButton(true);
       this.loading.activateLoder(false);
-      print("GEMINI Points LENGTH: " + response.points.length);
-      this.responseUI.openResponseBubble(response.aiMessage);
-      //create points and labels
-      for (var i = 0; i < response.points.length; i++) {
-        var pointObj = response.points[i];
-        if (this.showDebugVisuals) {
-          this.debugVisualizer.visualizeLocalPoint(
-            pointObj.pixelPos,
-            cameraFrame
-          );
+
+      // Open the response bubble with the comparison message
+      this.responseUI.openResponseBubble(response.message || response.aiMessage);
+
+      // Check if we have comparison data with exactly 2 items
+      const dataArray = response.data || response.points || [];
+      print("Response data LENGTH: " + dataArray.length);
+
+      // Create labels for each detected item
+      for (var i = 0; i < dataArray.length; i++) {
+        var itemData = dataArray[i];
+
+        let pixelPos = itemData.pixelPos;
+
+        if (!pixelPos && itemData.coordinates && itemData.coordinates.length >= 4) {
+          print("Item " + i + " has coordinates but no pixelPos - skipping to avoid bad world position");
+          continue;
         }
+
+        if (!pixelPos) {
+          print("No position data for item " + i);
+          continue;
+        }
+
+        if (this.showDebugVisuals) {
+          this.debugVisualizer.visualizeLocalPoint(pixelPos, cameraFrame);
+        }
+
         var worldPosition = this.depthCache.getWorldPositionWithID(
-          pointObj.pixelPos,
+          pixelPos,
           depthFrameID
         );
+
         if (worldPosition != null) {
-          //create and position label in world space
+          // Pass the full message to loadWorldLabel so it can extract item-specific data
           this.responseUI.loadWorldLabel(
-            pointObj.label,
+            itemData.label,
             worldPosition,
-            pointObj.showArrow
+            itemData.showArrow || false,
+            response.message || response.aiMessage
           );
         }
       }
