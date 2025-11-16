@@ -1,7 +1,6 @@
 import animate, { CancelSet } from "SpectaclesInteractionKit.lspkg/Utils/animate";
 import Event from "SpectaclesInteractionKit.lspkg/Utils/Event";
 import { ASRController } from "./ASRController";
-import { CelebrationEffect } from "./CelebrationEffect";
 
 const UI_CAM_DISTANCE = 50;
 const UI_CAM_HEIGHT = -9;
@@ -18,7 +17,7 @@ export class SpeechUI extends BaseScriptComponent {
   @input asrVoiceController: ASRController;
   @input speechButtonCollider: ColliderComponent;
   @input tutorialObject: SceneObject; // The 3D object to show/hide
-  @input celebration: SceneObject;
+  // @input celebration: SceneObject;
   onSpeechReady = new Event<string>();
 
   private speechBubbleTrans: Transform;
@@ -31,13 +30,9 @@ export class SpeechUI extends BaseScriptComponent {
     this.speechBubbleTrans.setLocalScale(vec3.zero());
     this.trans = this.getSceneObject().getTransform();
     this.mainCamTrans = this.mainCamObj.getTransform();
+    // this.celebration.enabled = false;
     this.animateSpeechIcon(false);
     this.speechText.text = "";
-
-    // Hide celebration button until voice input is received
-    if (this.celebration) {
-      this.celebration.enabled = false;
-    }
 
     this.createEvent("OnStartEvent").bind(this.onStart.bind(this));
     this.createEvent("UpdateEvent").bind(this.onUpdate.bind(this));
@@ -61,9 +56,9 @@ export class SpeechUI extends BaseScriptComponent {
       var delayEvent = this.createEvent("DelayedCallbackEvent");
       delayEvent.bind(() => {
         // display the button after the use
-        if (this.celebration) {
-          this.celebration.enabled = true;
-        }
+        // if (this.celebration) {
+        //   this.celebration.enabled = true;
+        // }
 
         // Invoke speech ready event (triggers API call) after 15 second delay
         this.onSpeechReady.invoke(text);

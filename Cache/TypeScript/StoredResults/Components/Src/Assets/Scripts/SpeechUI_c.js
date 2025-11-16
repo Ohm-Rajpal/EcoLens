@@ -19,7 +19,6 @@ function checkUndefined(property, showIfData) {
 // @input AssignableType asrVoiceController
 // @input Component.ColliderComponent speechButtonCollider
 // @input SceneObject tutorialObject
-// @input SceneObject celebration
 if (!global.BaseScriptComponent) {
     function BaseScriptComponent() {}
     global.BaseScriptComponent = BaseScriptComponent;
@@ -41,7 +40,6 @@ awakeEvent.bind(() => {
     checkUndefined("asrVoiceController", []);
     checkUndefined("speechButtonCollider", []);
     checkUndefined("tutorialObject", []);
-    checkUndefined("celebration", []);
     if (script.onAwake) {
        script.onAwake();
     }

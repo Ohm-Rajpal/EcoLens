@@ -72,7 +72,7 @@ let SpeechUI = (() => {
             this.asrVoiceController = this.asrVoiceController;
             this.speechButtonCollider = this.speechButtonCollider;
             this.tutorialObject = this.tutorialObject; // The 3D object to show/hide
-            this.celebration = this.celebration;
+            // @input celebration: SceneObject;
             this.onSpeechReady = new Event_1.default();
             this.hasShownTutorial = false;
         }
@@ -85,7 +85,7 @@ let SpeechUI = (() => {
             this.asrVoiceController = this.asrVoiceController;
             this.speechButtonCollider = this.speechButtonCollider;
             this.tutorialObject = this.tutorialObject; // The 3D object to show/hide
-            this.celebration = this.celebration;
+            // @input celebration: SceneObject;
             this.onSpeechReady = new Event_1.default();
             this.hasShownTutorial = false;
         }
@@ -94,12 +94,9 @@ let SpeechUI = (() => {
             this.speechBubbleTrans.setLocalScale(vec3.zero());
             this.trans = this.getSceneObject().getTransform();
             this.mainCamTrans = this.mainCamObj.getTransform();
+            // this.celebration.enabled = false;
             this.animateSpeechIcon(false);
             this.speechText.text = "";
-            // Hide celebration button until voice input is received
-            if (this.celebration) {
-                this.celebration.enabled = false;
-            }
             this.createEvent("OnStartEvent").bind(this.onStart.bind(this));
             this.createEvent("UpdateEvent").bind(this.onUpdate.bind(this));
         }
@@ -119,9 +116,9 @@ let SpeechUI = (() => {
                 var delayEvent = this.createEvent("DelayedCallbackEvent");
                 delayEvent.bind(() => {
                     // display the button after the use
-                    if (this.celebration) {
-                        this.celebration.enabled = true;
-                    }
+                    // if (this.celebration) {
+                    //   this.celebration.enabled = true;
+                    // }
                     // Invoke speech ready event (triggers API call) after 15 second delay
                     this.onSpeechReady.invoke(text);
                 });
