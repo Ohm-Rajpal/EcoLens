@@ -1,0 +1,142 @@
+- !<AssetCache>
+  AssetFiles:
+    fa537e58-ed52-4692-9af4-6fe91ec860eb: 7eff2da0-6b4c-dcd3-36b4-03e6a4d0e4ae/904b5bf608bb837d49488e2b3e8ef90f/Data/circleOutline.ss_graph
+  Assets:
+    - !<ShaderGraphPass/fa537e58-ed52-4692-9af4-6fe91ec860eb>
+      PackagePath: ""
+      DefaultDefines:
+        []
+      DefaultProperties:
+        Port_Depth_N004:
+          typeIdx: 1
+          value: 1.000000
+        Port_FinalColor1_N004:
+          typeIdx: 5
+          value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+        Port_FinalColor2_N004:
+          typeIdx: 5
+          value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+        Port_FinalColor3_N004:
+          typeIdx: 5
+          value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+        Port_GSplatPointSize_N004:
+          typeIdx: 1
+          value: 0.000000
+        Port_GSplatRotation_N004:
+          typeIdx: 5
+          value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+        Port_GSplatScale_N004:
+          typeIdx: 4
+          value: {x: 0.000000, y: 0.000000, z: 0.000000}
+        Port_Import_N139:
+          typeIdx: 3
+          value: {x: 0.500000, y: 0.500000}
+        Port_Import_N141:
+          typeIdx: 1
+          value: 0.000000
+        Port_Import_N142:
+          typeIdx: 3
+          value: {x: 0.500000, y: 0.500000}
+        Port_Input1_N005:
+          typeIdx: 1
+          value: 0.500000
+        Port_PrevWorldPosition_N004:
+          typeIdx: 4
+          value: {x: 0.000000, y: 0.000000, z: 0.000000}
+        Port_RangeMaxA_N010:
+          typeIdx: 1
+          value: 1.000000
+        Port_RangeMaxB_N010:
+          typeIdx: 1
+          value: 0.600000
+        Port_RangeMinA_N010:
+          typeIdx: 1
+          value: 0.000000
+        Port_RangeMinB_N010:
+          typeIdx: 1
+          value: 0.505000
+        Port_RayDirection_N004:
+          typeIdx: 4
+          value: {x: 0.000000, y: 1.000000, z: 0.000000}
+        Port_RayOrigin_N004:
+          typeIdx: 4
+          value: {x: 0.000000, y: 0.000000, z: 0.000000}
+        Port_Value1_N003:
+          typeIdx: 4
+          value: {x: 1.000000, y: 1.000000, z: 1.000000}
+        Port_Value3_N003:
+          typeIdx: 1
+          value: 0.000000
+        Port_Value4_N003:
+          typeIdx: 1
+          value: 0.000000
+        Port_WorldNormal_N004:
+          typeIdx: 4
+          value: {x: 0.000000, y: 1.000000, z: 0.000000}
+        Port_WorldPosition_N004:
+          typeIdx: 4
+          value: {x: 0.000000, y: 0.000000, z: 0.000000}
+        Port_WorldTangent_N004:
+          typeIdx: 4
+          value: {x: 0.000000, y: 0.000000, z: 1.000000}
+      PassUiData: !<PassUiData>
+        ExtraDefines:
+          - SC_ENABLE_RT_CASTER
+        PassBindings:
+          - mLabel: Graph Parameters
+            mType: Invalid
+            mName: ""
+            mWidget: group_start
+            mHint: ""
+            mMin: ~
+            mMax: ~
+            mStep: ~
+            mDefaultVal: ~
+            mValues:
+              []
+          - mLabel: Thickness
+            mType: Property
+            mName: Thickness
+            mWidget: slider
+            mHint: "Property: Thickness"
+            mMin: 0.000000
+            mMax: 1.000000
+            mStep: 0.010000
+            mDefaultVal: 0.001000
+            mValues:
+              []
+          - mLabel: ""
+            mType: GroupEnd
+            mName: ""
+            mWidget: group_end
+            mHint: ""
+            mMin: ~
+            mMax: ~
+            mStep: ~
+            mDefaultVal: ~
+            mValues:
+              []
+          - mLabel: Alpha Test Threshold
+            mType: Property
+            mName: alphaTestThreshold
+            mWidget: slider
+            mHint: |-
+              Property: alphaTestThreshold
+              
+              When the 'Alpha Test' blend mode is enabled, pixels with alpha values lower than this disappear.
+            mMin: 0.000000
+            mMax: 1.000000
+            mStep: 0.001000
+            mDefaultVal: 0.500000
+            mValues:
+              []
+        ShaderType: Mesh3d
+      ShaderPath: 7eff2da0-6b4c-dcd3-36b4-03e6a4d0e4ae/904b5bf608bb837d49488e2b3e8ef90f/Data/bf73d32/circleOutline.glsl
+      Defines:
+        []
+      Properties:
+        {}
+  SourceHash: 904b5bf608bb837d49488e2b3e8ef90f
+  FileHash: c229672954ea0d6530bbd360d884c849
+  NativePackageItems:
+    []

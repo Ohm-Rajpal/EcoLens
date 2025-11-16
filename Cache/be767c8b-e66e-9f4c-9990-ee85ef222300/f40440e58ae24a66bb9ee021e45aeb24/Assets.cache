@@ -1,0 +1,13 @@
+- !<AssetCache>
+  AssetFiles:
+    1e1e4202-a458-42eb-8126-33f37e404ae0: be767c8b-e66e-9f4c-9990-ee85ef222300/f40440e58ae24a66bb9ee021e45aeb24/Data/Mask_simple_reflection_ellipse.png
+  Assets:
+    - !<FileTexture/1e1e4202-a458-42eb-8126-33f37e404ae0>
+      PackagePath: ""
+      FileInfo: !<FileTextureInfo>
+        Width: 256
+        Height: 256
+  SourceHash: f40440e58ae24a66bb9ee021e45aeb24
+  FileHash: 6a06b67d04d56e6794a3ad35c4e5d305
+  NativePackageItems:
+    []

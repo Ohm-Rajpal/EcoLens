@@ -1,0 +1,13 @@
+- !<AssetCache>
+  AssetFiles:
+    dc36e962-1a73-41c5-af0d-7d0106c024aa: 54834311-55bc-497e-9f5a-06a01664aeaf/d1772987e79e4e42000bb98e2c06eaa3/Data/MicIcon.png
+  Assets:
+    - !<FileTexture/dc36e962-1a73-41c5-af0d-7d0106c024aa>
+      PackagePath: ""
+      FileInfo: !<FileTextureInfo>
+        Width: 512
+        Height: 512
+  SourceHash: d1772987e79e4e42000bb98e2c06eaa3
+  FileHash: 4b75b0a659139c2d6d7a54301a699280
+  NativePackageItems:
+    []

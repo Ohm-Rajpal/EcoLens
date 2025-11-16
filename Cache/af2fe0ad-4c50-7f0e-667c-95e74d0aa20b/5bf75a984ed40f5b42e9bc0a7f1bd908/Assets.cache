@@ -1,0 +1,17 @@
+- !<AssetCache>
+  AssetFiles:
+    a810caf0-eae5-40d2-8c54-325644bf4190: af2fe0ad-4c50-7f0e-667c-95e74d0aa20b/5bf75a984ed40f5b42e9bc0a7f1bd908/Data/ScrollBarMesh.mesh
+  Assets:
+    - !<FileMesh/a810caf0-eae5-40d2-8c54-325644bf4190>
+      PackagePath: ""
+      Info: !<MeshInfo>
+        Triangles: 24
+        Vertices: 48
+        Blendshapes:
+          - Size
+        Joints: 0
+        AabbSize: {x: 1.633127, y: 24.864964, z: 0.000001}
+  SourceHash: 5bf75a984ed40f5b42e9bc0a7f1bd908
+  FileHash: 58a16d918e6d4fc7dc6796a0ce26af7d
+  NativePackageItems:
+    []

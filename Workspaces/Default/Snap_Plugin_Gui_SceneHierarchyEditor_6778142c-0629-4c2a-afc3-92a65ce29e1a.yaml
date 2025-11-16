@@ -1,0 +1,20 @@
+CollapsedEntities:
+  type: stringset
+  value:
+    size: 9
+    values:
+      - 141e2111-e85b-4cf0-833e-c3c096410d7c
+      - 1eb31072-860a-4b69-8503-34de0d653e84
+      - 66a0de32-6456-43b5-9b75-345215e0e8a9
+      - 8e2a0eaf-e83b-4cd2-8984-5b175a40fc20
+      - 8f770135-3419-4a61-875f-4f1cad29e78e
+      - a40b4889-a67c-4d0d-8cfe-fe0fd2c1ef69
+      - c003c5a9-b3ad-49f7-a217-957f2f4c32bd
+      - d82ebfe4-8c94-4766-a715-ee429d1b902b
+      - f84f07f8-34cc-4487-822b-7521e582960b
+  options: 4
+PinnedEntities:
+  type: uuids
+  value:
+    size: 0
+  options: 4
